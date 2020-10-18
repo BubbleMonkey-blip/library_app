@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>My Library</title>
+    <link rel="stylesheet" type="text/css" href="./style.css"  />
+  </head>
+  <body>
+    <div class="openBtn" id="btnOpen">
+      <h1>My Library</h1>
+      <button class="openButton" onclick="openForm()">
+        <strong>Add a Book</strong>
+      </button>
+    </div>
+      
+      <div class="formPopup" id="popupForm">
+        <form>
+          <label for="title">Title:</label><br>
+          <input type="text" id="title" class="inputBox" name="title"><br>
+          <label for="author">Author:</label><br>
+          <input type="text" id="author" class="inputBox" name="author"><br>
+          <label for="pages">Number of pages:</label><br>
+          <input type="number" id="pages" class="inputBox" name="pages"><br>
+          <label for="read">Aleady read?</label>
+          <input type="checkbox" id="read" name="read">
+        </form><br>
+        <button class="submitButton" onClick="addBookToLibrary(document.getElementById('title').value, document.getElementById('author').value, document.getElementById('pages').value, document.getElementById('read').checked);updateDisplay()"><strong>Submit</strong></button>
+        <button class="closeButton" onclick="closeForm()">
+          <strong>Close</strong></button>
+      </div>
+      
+      <div id="libraryDisplay">
+      </div>
+    <script src="script.js"></script> 
+  </body>
+</html>
