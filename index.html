@@ -5,7 +5,7 @@
     <title>My Library</title>
     <link rel="stylesheet" type="text/css" href="./style.css"  />
   </head>
-  <body>
+  <body onload="updateDisplay()">
     <div class="openBtn" id="btnOpen">
       <h1>My Library</h1>
       <button class="openButton" onclick="openForm()">
@@ -14,7 +14,7 @@
     </div>
       
       <div class="formPopup" id="popupForm">
-        <form>
+        <form id="form">
           <label for="title">Title:</label><br>
           <input type="text" id="title" class="inputBox" name="title"><br>
           <label for="author">Author:</label><br>
@@ -22,15 +22,21 @@
           <label for="pages">Number of pages:</label><br>
           <input type="number" id="pages" class="inputBox" name="pages"><br>
           <label for="read">Aleady read?</label>
-          <input type="checkbox" id="read" name="read">
-        </form><br>
-        <button class="submitButton" onClick="addBookToLibrary(document.getElementById('title').value, document.getElementById('author').value, document.getElementById('pages').value, document.getElementById('read').checked);updateDisplay()"><strong>Submit</strong></button>
+          <input type="checkbox" id="read" name="read"><br> 
+        </form>
+        <button type="button" class="submitButton" onClick="addBookToLibrary(document.getElementById('title').value, document.getElementById('author').value, document.getElementById('pages').value, document.getElementById('read').checked); closeForm(); resetForm()"><strong>Submit</strong></button>
         <button class="closeButton" onclick="closeForm()">
           <strong>Close</strong></button>
       </div>
       
       <div id="libraryDisplay">
       </div>
-    <script src="script.js"></script> 
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+    <!-- Firebase Analytics and Realtime Database SDK -->
+    <script  src="https://www.gstatic.com/firebasejs/7.24.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

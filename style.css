@@ -13,6 +13,7 @@ body {
     background-color: #008AA5;
     color: white;
     border-color: black;
+    margin-bottom: 10px;
 }
 
 .formPopup {
@@ -30,6 +31,7 @@ body {
     border: solid;
     width: fit-content;
     margin-left: 10px;
+    margin-bottom: 10px;
     background-color: #00BBD7; 
     border-radius:10%;
     padding-left: 5px;
