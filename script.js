@@ -12,11 +12,14 @@ submitButton.addEventListener("click", resetForm);
 submitButton.addEventListener("click", updateDisplay);
 
 
-function Book (title, author, pages, read) {
+class Book {
+  constructor(title, author, pages, read) {
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.read = read;
+  }
+  
 }
 
 function addBookToLibrary(title, author, pages, read) {
