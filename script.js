@@ -1,17 +1,5 @@
 let myLibrary = [];
 
-const openButton = document.getElementById("openButton");
-openButton.addEventListener("click", openForm);
-
-const closeButton = document.getElementById("closeButton")
-closeButton.addEventListener("click", closeForm);
-
-const submitButton = document.getElementById("submitButton");
-submitButton.addEventListener("click", closeForm);
-submitButton.addEventListener("click", resetForm);
-submitButton.addEventListener("click", updateDisplay);
-
-
 class Book {
   constructor(title, author, pages, read) {
   this.title = title;
@@ -19,8 +7,28 @@ class Book {
   this.pages = pages;
   this.read = read;
   }
-  
 }
+
+const titleInput = document.getElementById("title");
+const authorInput = document.getElementById("author");
+const pagesInput = document.getElementById("pages");
+
+const openButton = document.getElementById("openButton");
+openButton.addEventListener("click", openForm);
+
+const closeButton = document.getElementById("closeButton")
+closeButton.addEventListener("click", closeForm);
+
+const submitButton = document.getElementById("submitButton");
+submitButton.addEventListener("click", () => {
+  if(titleInput.checkValidity() && authorInput.checkValidity() && pagesInput.checkValidity()) {
+    addBookToLibrary(document.getElementById('title').value, document.getElementById('author').value, document.getElementById('pages').value, document.getElementById('read').checked);
+    closeForm();
+    resetForm();
+    updateDisplay();} else {
+      alert("All Inputs are required!");
+      };
+});
 
 function addBookToLibrary(title, author, pages, read) {
   const book = new Book(title, author, pages, read);

@@ -18,16 +18,16 @@
       
     <div class="formPopup" id="popupForm">
       <form id="form">
-        <label for="title"><strong>Title:</strong></label><br>
-        <input type="text" id="title" class="inputBox" name="title"><br>
-        <label for="author"><strong>Author:</strong></label><br>
-        <input type="text" id="author" class="inputBox" name="author"><br>
-        <label for="pages"><strong>Number of pages:</strong></label><br>
-        <input type="number" id="pages" class="inputBox" name="pages"><br>
+        <label for="title"><strong>Title: (required)</strong></label><br>
+        <input type="text" id="title" class="inputBox" name="title" required><br>
+        <label for="author"><strong>Author: (required)</strong></label><br>
+        <input type="text" id="author" class="inputBox" name="author" required><br>
+        <label for="pages"><strong>Number of pages: (required)</strong></label><br>
+        <input type="number" id="pages" class="inputBox" name="pages" required><br>
         <label for="read"><strong>Aleady read?</strong></label>
         <input type="checkbox" id="read" name="read"><br> 
       </form>
-      <button type="button" class="submitButton" id="submitButton" onClick="addBookToLibrary(document.getElementById('title').value, document.getElementById('author').value, document.getElementById('pages').value, document.getElementById('read').checked);"><strong>Submit</strong></button>
+      <button type="button" class="submitButton" id="submitButton"><strong>Submit</strong></button>
       <button class="closeButton" id="closeButton">
         <strong>Close</strong></button>
     </div>
